@@ -152,18 +152,6 @@ const NavbarSection = (props) => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <Button style={navItemStyle} color={navItemColor}>
-        News
-      </Button>
-      <Button style={navItemStyle} color={navItemColor}>
-        Description
-      </Button>
-      <Button style={navItemStyle} color={navItemColor}>
-        Blog
-      </Button>
-      <Button style={navItemStyle} color={navItemColor}>
-        Contact
-      </Button>
       <Link to="/login">
         <Button style={btnStyle}>Login</Button>
       </Link>
@@ -217,19 +205,6 @@ const NavbarSection = (props) => {
               </Link>
             </div>
             <div className={classes.sectionMobile}>
-              <Button style={navItemStyle} color={navItemColor}>
-                News
-              </Button>
-              <Button style={navItemStyle} color={navItemColor}>
-                Description
-              </Button>
-              <Button style={navItemStyle} color={navItemColor}>
-                Blog
-              </Button>
-              <Button style={navItemStyle} color={navItemColor}>
-                Contact
-              </Button>
-
               <Link to="/login">
                 <Button style={btnStyle}>Login</Button>
               </Link>
