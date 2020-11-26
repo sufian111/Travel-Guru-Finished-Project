@@ -43,6 +43,7 @@ function App() {
                 <Login></Login>
               </div>
             </Route>
+
             <Route path="/signup">
               <div className="App2">
                 <NavbarSection logo={logo} color="default" />
