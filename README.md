@@ -2,7 +2,7 @@
 
 # Travel Guru is an Travel Agency web app
 
-### [LIVE SITE](https://sad-heisenberg-39333f.netlify.app/ "Travel Guru")
+### [LIVE SITE](https://travel-guru-agency.netlify.app/"Travel Guru")
 
 ## Features
 Site is responsive and Used for travelers . 
