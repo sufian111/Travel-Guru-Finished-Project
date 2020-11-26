@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -18,6 +18,7 @@ import { Button, Container } from "@material-ui/core";
 import "./NavbarSection.css";
 import { Link } from "react-router-dom";
 import logo from "../../Image/Logo.png";
+import { userContext } from "../../App";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -157,6 +158,12 @@ const NavbarSection = (props) => {
       </Link>
     </Menu>
   );
+  const [userLogged, setUserLogged] = useContext(userContext);
+
+  const handleLogOut = () => {
+    window.location.reload("Refresh");
+  };
+
   return (
     <div className={classes.grow}>
       <Container>
@@ -200,14 +207,30 @@ const NavbarSection = (props) => {
                 Contact
               </Button>
 
-              <Link to="/login">
-                <Button style={btnStyle}>Login</Button>
-              </Link>
+              {userLogged.email ? (
+                <Link to="/login">
+                  <Button onClick={handleLogOut} style={btnStyle}>
+                    Logout
+                  </Button>
+                </Link>
+              ) : (
+                <Link to="/login">
+                  <Button style={btnStyle}>Login</Button>
+                </Link>
+              )}
             </div>
             <div className={classes.sectionMobile}>
-              <Link to="/login">
-                <Button style={btnStyle}>Login</Button>
-              </Link>
+              {userLogged.email ? (
+                <Link to="/login">
+                  <Button onClick={handleLogOut} style={btnStyle}>
+                    Logout
+                  </Button>
+                </Link>
+              ) : (
+                <Link to="/login">
+                  <Button style={btnStyle}>Login</Button>
+                </Link>
+              )}
             </div>
           </Toolbar>
         </AppBar>
